@@ -55,22 +55,25 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 static Checkpoints::MapCheckpoints mapCheckpoints =
         boost::assign::map_list_of
                 // MNPCoinDevs - RELEASE CHANGE - Checkpoins, timestamp of last checkpoint, total nr. of transactions
-                (       0, uint256("000008da52778c83303c1ece6630d1299e40de5a21c0fea72c23e44a92b02206"));          // First PoW premine block
+                (   0   , uint256("000008da52778c83303c1ece6630d1299e40de5a21c0fea72c23e44a92b02206"))    // First PoW block
+                (   500 , uint256("000000002701c3dd7c19922b439f46251bf833a17399f2ed69163a770133eb50"))
+                (   1000, uint256("00000008cbfeecba65fb88418589b005ac61a547e476a94bb01c3a631eda6c0f"))
+        ;
 
 static const Checkpoints::CCheckpointData data = {
         &mapCheckpoints,
-        1533088800, // * UNIX timestamp of last checkpoint block
-        0,       // * total number of transactions between genesis and last checkpoint
+        1533258500, // * UNIX timestamp of last checkpoint block
+        1001,       // * total number of transactions between genesis and last checkpoint
                     //   (the tx=... number in the SetBestChain debug.log lines)
         2000        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
         boost::assign::map_list_of
-                (       0, uint256("00000924036c67d803ce606ded8143127e62fa2111dd3b063880a1067c69ccb1"));        // First PoW block
+                (       0, uint256("00000924036c67d803ce606ded8143127e62fa2111dd3b063880a1067c69ccb1"));
 static const Checkpoints::CCheckpointData dataTestnet = {
         &mapCheckpointsTestnet,
-        1529903701,
+        1533258500,
         0,
         300};
 
